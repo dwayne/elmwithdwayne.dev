@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-#
-# Usage: deploy-production
-#
-
-dist="${dist:?}"
-
-deploy "$@" "$dist" release/production
