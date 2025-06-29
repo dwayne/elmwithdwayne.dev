@@ -1,3 +1,1 @@
 /blog/dev.to/dwayne/* https://dev.to/dwayne/:splat 302
-
-/blog/* /blog/dev.to/dwayne/:splat 200
