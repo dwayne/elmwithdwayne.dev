@@ -1,0 +1,30 @@
+#!/usr/bin/env nu
+
+# Start the development server
+def "main dev" [] {
+  cd $"($env.PROJECT_ROOT)"; pnpm dev
+}
+
+# Build the project and write it to disk
+def "main build" [] {
+  cd $"($env.PROJECT_ROOT)"; pnpm build
+}
+
+# Preview the build locally
+def "main preview" [] {
+  cd $"($env.PROJECT_ROOT)"; pnpm preview
+}
+
+# Deploy the website
+def --wrapped "main deploy" [...options] {
+  deploy ...$options $"($env.PROJECT_ROOT)/dist" release/production
+}
+
+# Remove development and build artifacts
+def "main clean" [] {
+  cd $"($env.PROJECT_ROOT)"
+
+  rm -rf .astro dist node_modules
+}
+
+def main [] {}
